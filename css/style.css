@@ -1,0 +1,44 @@
+#user_salute_region{
+    margin-top:40px;
+}
+
+footer{
+    height:30px;
+}
+footer div{
+    margin-top:10px;
+    color: white;
+}
+
+#WarningAlert,#SuccessAlert,#DangerAlert{
+    display: none;
+}
+.WaitBox{
+    color: #345E8C;
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+.modal-content{border-radius: 0px;}
+.modal-header{background: #244363; color: white;}
+.modal-header .close{color:white;}
+
+.ui-datepicker select {
+    color: #2e90bd;
+}
+
+.main-body{
+    padding-bottom:40px;
+}
+
+.error{
+    display: none;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
