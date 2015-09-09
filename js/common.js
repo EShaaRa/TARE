@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
                     if(data.status==true)
                     {
                         wait();
-                        window.location='../user/Login';
+                        window.location='../user/login';
                     }
                 }
             });

@@ -21,13 +21,9 @@ class userModel{
         return dbFactory::getFactory("SELECT * FROM users")->select_data();
     }
     
-    public static function userAuthentication($username,$password,$user_group_id)
+    public static function userAuthentication($username,$password)
     {
-//     $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
-     $sql="SELECT  U.*,UG.user_group_id FROM users AS U LEFT OUTER JOIN user_has_groups AS UG ON
-U.user_id=UG.user_id RIGHT OUTER JOIN user_groups AS G ON 
-UG.user_group_id=G.user_group_id
-WHERE U.username='$username' AND U.password='$password' UG.user_group_id='$user_group_id'";
+     $sql ="SELECT * FROM users WHERE username='$username' AND password='$password'";
      $user_data = dbFactory::getFactory($sql)->select_data();    
         if(count($user_data)>0) //Login Success
         {         
@@ -38,15 +34,15 @@ WHERE U.username='$username' AND U.password='$password' UG.user_group_id='$user_
             $_SESSION['password']=$user_data[0]['password'];
             $_SESSION['profile_pic']=$user_data[0]['profile_pic'];
             
-//            $user_id = $user_data[0]["user_id"];
-//            $sql = "SELECT user_group_id FROM user_has_groups WHERE user_id='$user_id'";
-//            $user_group_result = dbFactory::getFactory($sql)->select_data();
-//            $user_groups = Array();
-//            foreach($user_group_result as $groups)
-//            {
-//                array_push($user_groups, $groups["user_group_id"]);
-//            }
-//            $_SESSION["user_groups"]=$user_groups;
+            $user_id = $user_data[0]["user_id"];
+            $sql = "SELECT user_group_id FROM user_has_groups WHERE user_id='$user_id'";
+            $user_group_result = dbFactory::getFactory($sql)->select_data();
+            $user_groups = Array();
+            foreach($user_group_result as $groups)
+            {
+                array_push($user_groups, $groups["user_group_id"]);
+            }
+            $_SESSION["user_groups"]=$user_groups;
             return true;
         }
         else//Login Failed Event

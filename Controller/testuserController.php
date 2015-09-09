@@ -32,7 +32,8 @@ class userController {
         $cookie_data = explode(',', $_COOKIE['TareControl']);
         $username = $cookie_data[0];
         $password = $cookie_data[1];
-        $user_result = userModel::userAuthentication($username, $password);
+        $login = $cookie_data[2];
+        $user_result = userModel::userAuthentication($username, $password, $login);
         if ($user_result == true) {
             header("location:../dashboard/index");
         } else {
@@ -47,9 +48,8 @@ class userController {
     function AuthenticateAction() {
         $username = addslashes($_REQUEST['username']);
         $password = sha1($_REQUEST['password']);
-        $user_group_id=  addslashes($_REQUEST['user_group_id']);
         $isRememberme = $_REQUEST['rememberme'];
-        $user_result = userModel::userAuthentication($username, $password,$user_group_id);
+        $user_result = userModel::userAuthentication($username, $password,$login);
         if ($user_result == true && $isRememberme == "true") {
             $credentials = $username . ',' . $password;
             setcookie("TareControl", $credentials, time() + 3600);

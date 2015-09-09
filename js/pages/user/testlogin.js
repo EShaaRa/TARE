@@ -4,7 +4,6 @@ jQuery(document).ready(function(){
         wait();
         var username = $('#username').val();
         var password = $('#password').val();
-        var user_group_id=$('#user_group_id').val();//put ur user group option button value in here
         var remembermecount = $('#remember:checked').length;
         var rememberme=false;
         if(remembermecount>0)
@@ -16,7 +15,7 @@ jQuery(document).ready(function(){
             dataType:'json',
             async:false,
             cache:false,
-            data:{username:username,password:password,rememberme:rememberme,user_group_id:user_group_id},
+            data:{username:username,password:password,rememberme:rememberme},
             success:function(data){
                if(data.status==true)
                {
