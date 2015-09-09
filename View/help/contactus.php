@@ -3,61 +3,61 @@ include 'Common/header.php';
 include 'Common/menu.php';
 include 'Common/footer.php';
 ?>
-<link href="../css/pages/<?php echo $ScriptController; ?>/<?php echo $Scriptaction ?>.css" rel="stylesheet"/>
-<script src="../js/pages/<?php echo $ScriptController; ?>/<?php echo $Scriptaction ?>.js" type="text/javascript"></script>       
-
-<!--<div class="row-fluid main-body">-->
-<body>
-    <div class="container-fluid">
-        <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12" style="position: absolute;">
-           <div class="panel panel-success">
-               <div class="panel-heading">Profile of new user</div>
-               <div class="panel-body">
-                   <form id="frmRegister" action="../dashboard/index" method="post" enctype="multipart/form-data">                        
-                       <table id="register_form" border="0">
-                            <tr>
-                                <td align="right">Title &emsp;</td>                               
-                                <td> <label id="title"></label></td>                               
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Country &emsp;</td>
-                               <td> <label id="country"></label></td> 
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Employer & job title &emsp;</td>
-                                <td> <label id="job"></label></td> 
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Specialized area(s) &emsp;</td>
-                                <td> <label id="areas"></label></td> 
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Academic qualifications &emsp;</td>
-                                <td> <label id="academic"></label></td> 
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Other journals reviewing for &emsp;</td>
-                                <td> <label id="journals"></label></td> 
-                            </tr>            
-                            <tr> <td>&nbsp;</td></tr>
-                            <tr>
-                                <td align="right">Experience of reviewing (years) &emsp;</td>
-                               <td> <label id="experience"></label></td> 
-                            </tr>
-                            <tr> <td>&nbsp;</td></tr>   
-                        </table>
-                        <div align="center">
-                            <button id="btnApprove" class="btn btn-success"> Approve </button>&emsp;
-<!--                            <input type="submit" id="submit" value="Submit"/>--> 
-                            <button id="btnDeny" class="btn btn-success"> Deny </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../css/pages/<?php echo $ScriptController; ?>/<?php echo $Scriptaction ?>.css" rel="stylesheet"/>
+        <script src="../js/pages/<?php echo $ScriptController; ?>/<?php echo $Scriptaction ?>.js" type="text/javascript"></script>   
+    </head>
+    <body>
+        <div class="container-fluid">
+        <p style="font-size:16px;">
+            <b>Contact Us</b>
+        </p>
+        <p style="font-size:12px;">
+            <b>You have a problem with TMMS? Ask us! or feedback us!</b>
+        </p>
+        <table width="100%" cellspacing="0" cellpadding="5" border="0" style="background-color:#eeeeee;">
+            <tr> <td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">
+                    <b>Name:&nbsp; </b>
+                </td>
+                <td>
+                    <input type="text" name="name" size="44">
+                    * You must provide your name.
+                </td>
+            </tr>
+            <tr> <td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">
+                    <b>E-mail:&nbsp; </b>
+                </td>
+                <td>
+                    <input type="text" name="email" size="44">
+                    * You must provide your email.
+                </td>
+            </tr>
+            <tr> <td>&nbsp;</td></tr>
+            <tr>
+                <td align="right">
+                    <b>Your Message/Feedback:&nbsp; </b>
+                    <br> 
+                </td>
+                <td>
+                    <textarea rows="10" cols="42" name="question"></textarea>
+                </td>
+            </tr>
+        <!--    <tr> <td>&nbsp;</td></tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button id="btnSubmit" class="btn btn-success"> Send </button>&emsp;
+                    <button id="btnCancel" class="btn btn-success"> Cancel </button>
+                </td>
+            </tr>-->
+        </table>
+        <button id="btnSubmit" class="btn btn-success"> Send </button>&emsp;
+        <button id="btnCancel" class="btn btn-success"> Cancel </button>
         </div>
-    </div>
+    </body>
